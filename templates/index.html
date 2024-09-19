@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Previsão de Renda</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Previsão de Renda</h1>
+        <form id="predictionForm">
+            <input type="number" placeholder="Idade" id="age" required>
+            <select id="workclass" required>
+                <option value="" disabled selected>Classe de Trabalho</option>
+                <option value="Private">Privado</option>
+                <option value="Self-emp-not-inc">Autônomo - Não Inc.</option>
+                <option value="Self-emp-inc">Autônomo - Inc.</option>
+                <option value="Federal-gov">Governo Federal</option>
+                <option value="Local-gov">Governo Local</option>
+                <option value="State-gov">Governo Estadual</option>
+                <option value="Without-pay">Sem pagamento</option>
+                <option value="Never-worked">Nunca trabalhou</option>
+            </select>
+            <input type="number" placeholder="Fnlwgt" id="fnlwgt" required>
+            <select id="education" required>
+                <option value="" disabled selected>Educação</option>
+                <option value="Bachelors">Bacharelado</option>
+                <option value="Some-college">Ensino Superior Incompleto</option>
+                <option value="HS-grad">Ensino Médio Completo</option>
+                <option value="Masters">Mestrado</option>
+                <option value="Assoc-acdm">Assoc. Acadêmico</option>
+                <option value="Assoc-voc">Assoc. Profissional</option>
+                <option value="Doctorate">Doutorado</option>
+                <option value="Prof-school">Escola Profissional</option>
+                <option value="Preschool">Pré-escola</option>
+            </select>
+            <select id="education-num" required>
+                <option value="" disabled selected>Número de Educação</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+            </select>
+            <select id="marital-status" required>
+                <option value="" disabled selected>Estado Civil</option>
+                <option value="Married-civ-spouse">Casado(a)</option>
+                <option value="Divorced">Divorciado(a)</option>
+                <option value="Never-married">Nunca casado(a)</option>
+                <option value="Separated">Separado(a)</option>
+                <option value="Widowed">Viúvo(a)</option>
+                <option value="Married-spouse-absent">Cônjuge ausente</option>
+                <option value="Married-AF-spouse">Casado(a) - Forças Armadas</option>
+            </select>
+            <select id="occupation" required>
+                <option value="" disabled selected>Ocupação</option>
+                <option value="Tech-support">Suporte Técnico</option>
+                <option value="Craft-repair">Reparação Técnica</option>
+                <option value="Other-service">Outros Serviços</option>
+                <option value="Sales">Vendas</option>
+                <option value="Exec-managerial">Executivo(a)</option>
+                <option value="Prof-specialty">Profissional Especializado</option>
+                <option value="Handlers-cleaners">Serviços Gerais</option>
+                <option value="Machine-op-inspct">Operário(a) de Máquinas</option>
+                <option value="Adm-clerical">Administração</option>
+                <option value="Farming-fishing">Agricultura/Pesca</option>
+                <option value="Transport-moving">Transporte</option>
+                <option value="Priv-house-serv">Serviços Domésticos</option>
+                <option value="Protective-serv">Serviços de Proteção</option>
+                <option value="Armed-Forces">Forças Armadas</option>
+            </select>
+            <select id="relationship" required>
+                <option value="" disabled selected>Relacionamento</option>
+                <option value="Wife">Esposa</option>
+                <option value="Own-child">Filho(a)</option>
+                <option value="Husband">Marido</option>
+                <option value="Not-in-family">Não é da Família</option>
+                <option value="Other-relative">Outro Parente</option>
+                <option value="Unmarried">Solteiro(a)</option>
+            </select>
+            <select id="race" required>
+                <option value="" disabled selected>Raça</option>
+                <option value="White">Branco(a)</option>
+                <option value="Black">Negro(a)</option>
+                <option value="Asian-Pac-Islander">Asiático(a)</option>
+                <option value="Amer-Indian-Eskimo">Indígena/Esquimó</option>
+                <option value="Other">Outro</option>
+            </select>
+            <select id="sex" required>
+                <option value="" disabled selected>Sexo</option>
+                <option value="Male">Masculino</option>
+                <option value="Female">Feminino</option>
+            </select>
+            <input type="number" placeholder="Ganho de Capital" id="capital-gain" required>
+            <input type="number" placeholder="Perda de Capital" id="capital-loss" required>
+            <input type="number" placeholder="Horas por Semana" id="hours-per-week" required>
+            <select id="native-country" required>
+                <option value="" disabled selected>País de Origem</option>
+                <option value="United-States">Estados Unidos</option>
+                <option value="Mexico">México</option>
+                <option value="Canada">Canadá</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="India">Índia</option>
+                <option value="Puerto-Rico">Porto Rico</option>
+                <option value="Honduras">Honduras</option>
+                <option value="England">Inglaterra</option>
+                <option value="Germany">Alemanha</option>
+                <option value="Philippines">Filipinas</option>
+                <option value="Italy">Itália</option>
+                <option value="Poland">Polônia</option>
+                <option value="South">África do Sul</option>
+                <option value="Vietnam">Vietnã</option>
+                <option value="China">China</option>
+                <option value="Japan">Japão</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Iran">Irã</option>
+                <option value="Dominican-Republic">República Dominicana</option>
+                <option value="Columbia">Colômbia</option>
+                <option value="Ecuador">Equador</option>
+                <option value="France">França</option>
+                <option value="Greece">Grécia</option>
+                <option value="Ireland">Irlanda</option>
+                <option value="Thailand">Tailândia</option>
+                <option value="Yugoslavia">Iugoslávia</option>
+            </select>
+            <button type="submit">Prever</button>
+        </form>
+        <h2 id="result"></h2>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
