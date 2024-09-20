@@ -4,7 +4,7 @@ Para execução da API, recomendo fortemente o uso de um ambiente virtual;
 
 Antes de tudo, comande: pip install -r requirements.txt;
 
-Todos os modelos treinados estão em formato.pkl e, o melhor modelo, é denominado "best_model.pkl";
+Todos os modelos treinados estão em formato.pkl na pasta ML e, o melhor modelo, é denominado "best_model.pkl", localizado na main inicial. Os arquivos data.pkl e best_model.pkl devem estar no mesmo diretório do app.py;
 
 Apenas comande "python app.py" e aplicação se iniciará;
 
