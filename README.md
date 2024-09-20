@@ -8,6 +8,8 @@ Todos os modelos treinados estão em formato.pkl e, o melhor modelo, é denomina
 
 Apenas comande "python app.py" e aplicação se iniciará;
 
+Para os testes, fiz arquivos separados com diferentes funcionalidades. Utilize o comando "pytest -v tests/nome_do_arquivo.py".
+
 O aplicação fullstack está presente nesse repositório, bem como o link do Colab.
 
 Autor: João Vitor Alves de Souza Taube LinkedIn: https://www.linkedin.com/in/joaotaube/
