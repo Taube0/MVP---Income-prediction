@@ -51,9 +51,10 @@ h1 {
 
 /* Estilo do formulário */
 form {
-    display: grid;              /* Usando grid layout para organizar as colunas */
+    display: grid;
     grid-template-columns: 1fr 1fr;  /* Dois campos lado a lado */
-    gap: 20px;                  /* Espaço entre os campos */
+    gap: 20px;                       /* Espaçamento consistente entre os campos */
+    margin-top: 20px;                /* Espaçamento acima do formulário */
 }
 
 /* Estilo para os campos de entrada e seletores */
@@ -66,6 +67,7 @@ input, select {
     background-color: #f7f7f7;
     width: 100%;   /* Garantindo que o input ocupe toda a célula */
     margin-bottom: 20px; /* Adicionando espaçamento entre os campos */
+    box-sizing: border-box;  /* Para que o padding seja contabilizado corretamente */
 }
 
 /* Efeito de foco nos campos */
@@ -91,6 +93,7 @@ button {
     overflow: hidden;
     z-index: 1;
     grid-column: 1 / 3;  /* O botão vai ocupar as duas colunas */
+    margin-top: 10px;    /* Espaçamento extra no topo do botão */
 }
 
 /* Efeito de hover no botão */
@@ -182,26 +185,12 @@ input, select {
         font-size: 1.1em;
     }
 
-    /* Estilo para os campos de entrada e seletores */
-    input, select {
-        padding: 15px;
-        border: 2px solid #b0bec5;
-        border-radius: 8px;
-        font-size: 1em;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        background-color: #f7f7f7;
-        width: 100%;   /* Garantindo que o input ocupe toda a célula */
-}
-
-    }
-
+    /* Ajustar layout para uma coluna em telas pequenas */
     form {
-        display: grid;              
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas de largura igual */
-        gap: 20px;                  /* Espaço entre os campos */
+        grid-template-columns: 1fr;  /* Campos em uma única coluna */
     }
 
     button, #result {
         grid-column: 1 / 2;  /* O botão e o resultado ocuparão apenas uma coluna */
     }
-
+}
